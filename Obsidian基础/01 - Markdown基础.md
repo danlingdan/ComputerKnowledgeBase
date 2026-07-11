@@ -1,3 +1,12 @@
+---
+tags:
+  - Obsidian
+  - 教程
+  - Markdown
+category: Obsidian基础
+date: 2026-07-11
+---
+
 # Markdown 基础
 
 ## 一、标题
