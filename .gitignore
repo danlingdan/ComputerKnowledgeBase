@@ -8,3 +8,8 @@ Thumbs.db
 *.swp
 *.bak
 *.tmp
+
+
+
+# Ignore Smart Environment folder
+.smart-env
