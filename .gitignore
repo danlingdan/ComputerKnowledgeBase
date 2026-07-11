@@ -1,6 +1,7 @@
 .obsidian/*
 !.obsidian/plugins/
 !.obsidian/snippets/
+!.obsidian/templates/
 .trash/
 *.log
 .DS_Store
