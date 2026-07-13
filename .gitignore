@@ -13,7 +13,3 @@ Thumbs.db
 
 # Ignore Smart Environment folder
 .smart-env
-
-# Ignore AGENTS files
-AGENTS.md
-**/AGENTS.md
