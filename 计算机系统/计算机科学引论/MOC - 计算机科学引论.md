@@ -1,8 +1,15 @@
 ---
-aliases: [计算机科学引论, CS 导论, Introduction to Computer Science]
-tags: [MOC, 计算机科学引论, 课程地图]
+aliases:
+  - 计算机科学引论
+  - CS 导论
+  - Introduction to Computer Science
+tags:
+  - MOC
+  - 计算机科学引论
+  - 课程地图
 status: 已完善
 type: MOC
+node_size: 100
 创建时间: 2026-07-11
 更新时间: 2026-07-12
 ---

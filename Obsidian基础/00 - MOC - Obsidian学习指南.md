@@ -8,6 +8,7 @@ aliases:
   - Obsidian 学习汇总
 date: 2026-07-11
 type: MOC
+node_size: 75
 ---
 
 # MOC - Obsidian 学习指南

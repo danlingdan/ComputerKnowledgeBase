@@ -2,6 +2,7 @@
 title: 高等数学A(1)
 domain: 数学基础
 type: MOC
+node_size: 100
 status: 持续更新
 course: 高等数学A(1)
 aliases:
