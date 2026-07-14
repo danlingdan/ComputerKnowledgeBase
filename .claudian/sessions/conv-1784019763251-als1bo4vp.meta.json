@@ -1,0 +1,26 @@
+{
+  "id": "conv-1784019763251-als1bo4vp",
+  "providerId": "codex",
+  "title": "帮我修改一下，使得更加符合Obsidian的笔记",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1784019763251,
+  "updatedAt": 1784020607606,
+  "lastResponseAt": 1784020607606,
+  "sessionId": "019f5fdd-5441-7e13-86d8-403be7bc36c9",
+  "selectedModel": "gpt-5.6-terra",
+  "providerState": {
+    "threadId": "019f5fdd-5441-7e13-86d8-403be7bc36c9",
+    "sessionFilePath": "C:\\Users\\28443\\.codex\\sessions\\2026\\07\\14\\rollout-2026-07-14T17-02-53-019f5fdd-5441-7e13-86d8-403be7bc36c9.jsonl",
+    "transcriptRootPath": "C:\\Users\\28443\\.codex\\sessions"
+  },
+  "usage": {
+    "inputTokens": 60562,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 45824,
+    "contextWindow": 258400,
+    "contextWindowIsAuthoritative": true,
+    "contextTokens": 60562,
+    "percentage": 23,
+    "model": "gpt-5.6-terra"
+  }
+}
