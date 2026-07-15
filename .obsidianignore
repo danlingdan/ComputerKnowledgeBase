@@ -1,2 +1,25 @@
 AGENTS.md
 **/AGENTS.md
+
+# AI 工具会话和本地工作状态
+.claude/
+.claudian/
+.workbuddy/
+.smart-env/
+.trash/
+
+# GitHub 与启动器发布元数据不参与知识库索引
+.git/
+.github/
+launcher/
+
+# 个人 Obsidian 状态和可能包含凭据的插件配置
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/hotkeys.json
+.obsidian/plugins/*/data.json
+
+# 临时文件与日志
+*.log
+*.tmp
+*.bak
