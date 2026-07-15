@@ -37,10 +37,12 @@ jobs:
 
           robocopy . $stage /E /R:2 /W:1 `
             /XD .git .github .claude .claudian .workbuddy .smart-env .trash `
-            /XF AGENTS.md .gitignore data.json workspace.json workspace-mobile.json hotkeys.json *.log *.tmp *.bak
+            /XF AGENTS.md .gitignore data.json workspace.json workspace-mobile.json hotkeys.json *.log *.tmp *.bak | Out-Null
           if ($LASTEXITCODE -ge 8) {
             throw "复制知识库失败，robocopy 退出码：$LASTEXITCODE"
           }
+          # Robocopy 的 0–7 均为成功状态；避免其成功码 1 成为步骤最终退出码。
+          $global:LASTEXITCODE = 0
 
           $pluginDirectory = Join-Path $stage '.obsidian\plugins'
           if (Test-Path -LiteralPath $pluginDirectory) {
