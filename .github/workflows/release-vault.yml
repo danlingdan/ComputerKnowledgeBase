@@ -1,0 +1,127 @@
+name: Release Vault
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "版本号，例如 2026.07.16.1"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  validate-and-release:
+    runs-on: windows-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build and validate release assets
+        id: build
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $version = '${{ inputs.version }}'
+
+          if ($version -notmatch '^\d{4}\.\d{2}\.\d{2}\.\d+$') {
+            throw "版本号必须采用 YYYY.MM.DD.N 格式。"
+          }
+
+          $stage = Join-Path $env:RUNNER_TEMP 'vault-stage'
+          $output = Join-Path $env:RUNNER_TEMP 'vault-release'
+          New-Item -ItemType Directory -Path $stage, $output -Force | Out-Null
+
+          robocopy . $stage /E /R:2 /W:1 `
+            /XD .git .github .claude .claudian .workbuddy .smart-env .trash `
+            /XF AGENTS.md .gitignore data.json workspace.json workspace-mobile.json hotkeys.json *.log *.tmp *.bak
+          if ($LASTEXITCODE -ge 8) {
+            throw "复制知识库失败，robocopy 退出码：$LASTEXITCODE"
+          }
+
+          $pluginDirectory = Join-Path $stage '.obsidian\plugins'
+          if (Test-Path -LiteralPath $pluginDirectory) {
+            Remove-Item -LiteralPath $pluginDirectory -Recurse -Force
+          }
+
+          $manifestPath = Join-Path $stage 'launcher\manifest.json'
+          $pluginLockPath = Join-Path $stage 'launcher\plugin-lock.json'
+          $updatePolicyPath = Join-Path $stage 'launcher\update-policy.json'
+          foreach ($requiredFile in @($manifestPath, $pluginLockPath, $updatePolicyPath)) {
+            if (-not (Test-Path -LiteralPath $requiredFile -PathType Leaf)) {
+              throw "缺少发布文件：$requiredFile"
+            }
+          }
+
+          $manifest = Get-Content -Raw -LiteralPath $manifestPath | ConvertFrom-Json
+          $manifest.version = $version
+          $manifest | ConvertTo-Json -Depth 20 | Set-Content -Encoding utf8 -LiteralPath $manifestPath
+
+          $entryPath = Join-Path $stage ($manifest.entry -replace '/', '\')
+          if (-not (Test-Path -LiteralPath $entryPath -PathType Leaf)) {
+            throw "入口笔记不存在：$($manifest.entry)"
+          }
+
+          $pluginLock = Get-Content -Raw -LiteralPath $pluginLockPath | ConvertFrom-Json
+          if (-not $pluginLock.plugins -or $pluginLock.plugins.Count -lt 1) {
+            throw 'plugin-lock.json 至少需要一个锁定插件。'
+          }
+
+          $sensitiveFiles = Get-ChildItem -LiteralPath $stage -Recurse -Force -File | Where-Object {
+            $_.Name -eq 'data.json' -or
+            $_.Name -in @('workspace.json', 'workspace-mobile.json', 'hotkeys.json') -or
+            $_.FullName -match '[\\/](\.claude|\.claudian|\.workbuddy|\.smart-env|\.trash)[\\/]'
+          }
+          if ($sensitiveFiles) {
+            $names = $sensitiveFiles.FullName -join "`n"
+            throw "发布暂存区包含不允许的本地状态文件：`n$names"
+          }
+
+          $zipName = "knowledge-v$version.zip"
+          $zipPath = Join-Path $output $zipName
+          Add-Type -AssemblyName System.IO.Compression.FileSystem
+          [System.IO.Compression.ZipFile]::CreateFromDirectory(
+            $stage,
+            $zipPath,
+            [System.IO.Compression.CompressionLevel]::Optimal,
+            $false)
+          if (-not (Test-Path -LiteralPath $zipPath)) {
+            throw '创建知识库 ZIP 失败。'
+          }
+
+          $externalManifest = Join-Path $output 'manifest.json'
+          Copy-Item -LiteralPath $manifestPath -Destination $externalManifest
+
+          $files = [ordered]@{}
+          $files[$zipName] = (Get-FileHash -Algorithm SHA256 -LiteralPath $zipPath).Hash.ToLowerInvariant()
+          $files['manifest.json'] = (Get-FileHash -Algorithm SHA256 -LiteralPath $externalManifest).Hash.ToLowerInvariant()
+          @{ files = $files } | ConvertTo-Json -Depth 10 | Set-Content -Encoding utf8 -LiteralPath (Join-Path $output 'checksums.json')
+
+          "version=$version" >> $env:GITHUB_OUTPUT
+          "tag=vault-v$version" >> $env:GITHUB_OUTPUT
+          "output=$output" >> $env:GITHUB_OUTPUT
+          "zip_name=$zipName" >> $env:GITHUB_OUTPUT
+
+      - name: Create GitHub Release
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $output = '${{ steps.build.outputs.output }}'
+          $version = '${{ steps.build.outputs.version }}'
+          $tag = '${{ steps.build.outputs.tag }}'
+          $zipName = '${{ steps.build.outputs.zip_name }}'
+
+          gh release create $tag `
+            (Join-Path $output $zipName) `
+            (Join-Path $output 'manifest.json') `
+            (Join-Path $output 'checksums.json') `
+            --repo '${{ github.repository }}' `
+            --target '${{ github.sha }}' `
+            --title "计算机知识库 $version" `
+            --generate-notes `
+            --latest

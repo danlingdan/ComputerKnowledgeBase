@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "id": "computer-knowledge-base",
+  "name": "计算机知识库",
+  "version": "0.0.0",
+  "entry": "Obsidian基础/00 - MOC - Obsidian学习指南.md",
+  "minimumObsidianVersion": "1.11.0",
+  "pluginLock": "launcher/plugin-lock.json",
+  "updatePolicy": "launcher/update-policy.json"
+}
