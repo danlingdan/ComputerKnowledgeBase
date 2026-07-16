@@ -4,6 +4,8 @@ type: MOC
 node_size: 65
 status: 已完成
 course: 操作系统
+cssclasses:
+  - os-note
 aliases:
   - Operating System Code Examples
   - 操作系统代码索引
@@ -15,7 +17,7 @@ source:
   - D:\Learn\Operation System\Code
 version: 教学修正版，核实于 2026-07-14
 created: 2026-07-14
-updated: 2026-07-14
+updated: 2026-07-16
 ---
 
 # MOC - 操作系统示例代码
@@ -29,11 +31,11 @@ updated: 2026-07-14
 
 | 知识点 | 示例 | 关键观察 |
 | --- | --- | --- |
-| [[第三章 进程#3.3.1 进程创建|进程创建]] | [fork-exec.c](示例代码/03-进程/3.3.1/fork-exec.c)、[create-process.c](示例代码/03-进程/3.3.1/create-process.c) | POSIX 的 fork—exec 两阶段模型与 Windows 单次创建模型 |
-| [[第三章 进程#3.5.1 例子：POSIX共享内存|POSIX 共享内存]] | [posix-shm-producer.c](示例代码/03-进程/3.5.1/posix-shm-producer.c)、[posix-shm-consumer.c](示例代码/03-进程/3.5.1/posix-shm-consumer.c) | 创建、定长、映射、解除映射和删除对象 |
-| [[第三章 进程#3.6.1 套接字|套接字]] | [DateServer.java](示例代码/03-进程/3.6.1/DateServer.java)、[DateClient.java](示例代码/03-进程/3.6.1/DateClient.java) | TCP 服务器的 bind/listen/accept 与客户端 connect/read |
-| [[第三章 进程#3.6.3.1 普通管道|普通管道]] | [posix-pipe.c](示例代码/03-进程/3.6.3.1/posix-pipe.c) | 关闭未使用端点与 EOF |
-| [[第三章 进程#3.6.3.1 普通管道|Windows 匿名管道]] | [windows-anonymous-pipe-parent.c](示例代码/03-进程/3.6.3.1/windows-anonymous-pipe-parent.c)、[windows-anonymous-pipe-child.c](示例代码/03-进程/3.6.3.1/windows-anonymous-pipe-child.c) | 句柄继承和标准输入重定向 |
+| [[3.3 进程运行#3.3.1 进程创建|进程创建]] | [fork-exec.c](示例代码/03-进程/3.3.1/fork-exec.c)、[create-process.c](示例代码/03-进程/3.3.1/create-process.c) | POSIX 的 fork—exec 两阶段模型与 Windows 单次创建模型 |
+| [[3.5 IPC系统例子#3.5.1 例子：POSIX共享内存|POSIX 共享内存]] | [posix-shm-producer.c](示例代码/03-进程/3.5.1/posix-shm-producer.c)、[posix-shm-consumer.c](示例代码/03-进程/3.5.1/posix-shm-consumer.c) | 创建、定长、映射、解除映射和删除对象 |
+| [[3.6 客户机 - 服务器通信#3.6.1 套接字|套接字]] | [DateServer.java](示例代码/03-进程/3.6.1/DateServer.java)、[DateClient.java](示例代码/03-进程/3.6.1/DateClient.java) | TCP 服务器的 bind/listen/accept 与客户端 connect/read |
+| [[3.6 客户机 - 服务器通信#3.6.3.1 普通管道|普通管道]] | [posix-pipe.c](示例代码/03-进程/3.6.3.1/posix-pipe.c) | 关闭未使用端点与 EOF |
+| [[3.6 客户机 - 服务器通信#3.6.3.1 普通管道|Windows 匿名管道]] | [windows-anonymous-pipe-parent.c](示例代码/03-进程/3.6.3.1/windows-anonymous-pipe-parent.c)、[windows-anonymous-pipe-child.c](示例代码/03-进程/3.6.3.1/windows-anonymous-pipe-child.c) | 句柄继承和标准输入重定向 |
 
 > [!note] 原始材料分类修正
 > 原目录 `3.6.3.2` 中的 Windows 程序调用的是 `CreatePipe()`，实际创建的是匿名管道，并非 `CreateNamedPipe()` 命名管道，因此修正版归入 3.6.3.1。
@@ -50,15 +52,15 @@ updated: 2026-07-14
 
 ## 第五章：线程与实时调度
 
-- [[第五章 进程调度#5.4.2 Pthread调度|Pthread 竞争范围]]：[pthread-scope.c](示例代码/05-调度/5.4.2/pthread-scope.c)。
-- [[第五章 进程调度#5.6.6 POSIX实时调度|POSIX 实时调度]]：[posix-realtime-scheduling.c](示例代码/05-调度/5.6.6/posix-realtime-scheduling.c)。
+- [[5.4 线程调度#5.4.2 Pthread调度|Pthread 竞争范围]]：[pthread-scope.c](示例代码/05-调度/5.4.2/pthread-scope.c)。
+- [[5.6 实时CPU调度#5.6.6 POSIX实时调度|POSIX 实时调度]]：[posix-realtime-scheduling.c](示例代码/05-调度/5.6.6/posix-realtime-scheduling.c)。
 
 > [!warning] 权限与实现差异
 > `PTHREAD_SCOPE_PROCESS` 在一些实现中不受支持；`SCHED_FIFO` 通常要求实时调度权限。示例会检查并报告错误，不应把请求成功当作跨平台保证。
 
 ## 第九章：Windows 共享内存
 
-- [[第九章 虚拟内存管理#9.7.2 共享内存 Windows API|文件映射对象]]：[windows-shared-memory-producer.c](示例代码/09-虚拟内存/9.7.2/windows-shared-memory-producer.c)、[windows-shared-memory-consumer.c](示例代码/09-虚拟内存/9.7.2/windows-shared-memory-consumer.c)。
+- [[9.7 内存映射文件#9.7.2 共享内存 Windows API|文件映射对象]]：[windows-shared-memory-producer.c](示例代码/09-虚拟内存/9.7.2/windows-shared-memory-producer.c)、[windows-shared-memory-consumer.c](示例代码/09-虚拟内存/9.7.2/windows-shared-memory-consumer.c)。
 - 先启动生产者并保持窗口，再启动消费者；生产者退出后，若没有其他进程持有句柄，基于分页文件的命名映射对象会消失。
 
 ## 原始材料修正记录

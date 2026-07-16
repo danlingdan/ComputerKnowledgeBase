@@ -1,0 +1,209 @@
+/* 计算机网络课程笔记：仅作用于含 network-note cssclass 的笔记。 */
+
+.markdown-preview-view.network-note,
+.markdown-source-view.network-note {
+  --file-line-width: 880px;
+  --network-soft-accent: color-mix(in srgb, var(--interactive-accent) 12%, transparent);
+  --network-border: color-mix(in srgb, var(--text-muted) 24%, transparent);
+  --network-shadow: 0 8px 24px color-mix(in srgb, var(--background-modifier-box-shadow) 35%, transparent);
+}
+
+.markdown-preview-view.network-note .markdown-preview-sizer {
+  padding-bottom: 12vh;
+}
+
+.markdown-preview-view.network-note .inline-title,
+.markdown-source-view.network-note .inline-title {
+  display: none;
+}
+
+.markdown-preview-view.network-note.exam-note .metadata-container {
+  display: none;
+}
+
+.markdown-source-view.network-note .cm-line {
+  line-height: 1.72;
+}
+
+.markdown-source-view.network-note .HyperMD-header-1 {
+  margin-top: 0.55em;
+  padding-bottom: 0.42em;
+  border-bottom: 2px solid var(--interactive-accent);
+  letter-spacing: 0.035em;
+}
+
+.markdown-source-view.network-note .HyperMD-header-2 {
+  margin-top: 1.8em;
+  padding: 0.42em 0.6em;
+  border-left: 4px solid var(--interactive-accent);
+  border-bottom: 1px solid var(--network-border);
+  border-radius: 0 8px 8px 0;
+  background: linear-gradient(90deg, var(--network-soft-accent), transparent 72%);
+}
+
+.markdown-source-view.network-note .HyperMD-header-3 {
+  margin-top: 1.25em;
+  padding-bottom: 0.18em;
+  border-bottom: 1px dashed var(--network-border);
+}
+
+.markdown-preview-view.network-note h1 {
+  margin: 0.7em 0 1em;
+  padding-bottom: 0.45em;
+  border-bottom: 2px solid var(--interactive-accent);
+  letter-spacing: 0.035em;
+  line-height: 1.3;
+}
+
+.markdown-preview-view.network-note h2 {
+  margin-top: 2.6em;
+  padding: 0.48em 0.65em;
+  border-left: 4px solid var(--interactive-accent);
+  border-bottom: 1px solid var(--network-border);
+  border-radius: 0 8px 8px 0;
+  background: linear-gradient(90deg, var(--network-soft-accent), transparent 72%);
+  letter-spacing: 0.025em;
+}
+
+.markdown-preview-view.network-note h3 {
+  margin-top: 2em;
+  padding-bottom: 0.25em;
+  border-bottom: 1px dashed var(--network-border);
+  color: var(--text-normal);
+}
+
+.markdown-preview-view.network-note h4,
+.markdown-preview-view.network-note h5,
+.markdown-preview-view.network-note h6 {
+  margin-top: 1.55em;
+  color: var(--text-normal);
+}
+
+.markdown-preview-view.network-note p,
+.markdown-preview-view.network-note li {
+  line-height: 1.78;
+}
+
+.markdown-preview-view.network-note li + li {
+  margin-top: 0.24em;
+}
+
+.markdown-preview-view.network-note strong {
+  color: color-mix(in srgb, var(--text-normal) 80%, var(--interactive-accent));
+}
+
+.markdown-preview-view.network-note mark {
+  padding: 0.08em 0.22em;
+  border-radius: 4px;
+  background: color-mix(in srgb, var(--text-highlight-bg) 86%, transparent);
+}
+
+.markdown-preview-view.network-note a.internal-link {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+.markdown-preview-view.network-note .callout {
+  margin: 1.4em 0;
+  border-radius: 10px;
+  box-shadow: 0 3px 12px color-mix(in srgb, var(--background-modifier-box-shadow) 24%, transparent);
+}
+
+.markdown-preview-view.network-note .callout-title {
+  letter-spacing: 0.015em;
+}
+
+.markdown-preview-view.network-note table {
+  display: table;
+  width: 100%;
+  margin: 1.35em 0 1.8em;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  border: 1px solid var(--network-border);
+  border-radius: 9px;
+  box-shadow: 0 3px 12px color-mix(in srgb, var(--background-modifier-box-shadow) 18%, transparent);
+}
+
+.markdown-preview-view.network-note th {
+  background: var(--network-soft-accent);
+  font-weight: 650;
+}
+
+.markdown-preview-view.network-note th,
+.markdown-preview-view.network-note td {
+  padding: 0.62em 0.78em;
+  vertical-align: top;
+}
+
+.markdown-preview-view.network-note tbody tr:nth-child(even) {
+  background: color-mix(in srgb, var(--background-secondary) 42%, transparent);
+}
+
+.markdown-preview-view.network-note .image-embed img,
+.markdown-preview-view.network-note img {
+  display: block;
+  max-width: min(100%, 900px);
+  height: auto;
+  margin: 1.3em auto 0.75em;
+  border: 1px solid var(--network-border);
+  border-radius: 10px;
+  box-shadow: var(--network-shadow);
+}
+
+.markdown-preview-view.network-note pre,
+.markdown-preview-view.network-note .math-block {
+  overflow-x: auto;
+  border-radius: 9px;
+}
+
+.markdown-preview-view.network-note code:not(pre code) {
+  padding: 0.1em 0.32em;
+  border: 1px solid var(--network-border);
+  border-radius: 4px;
+}
+
+.markdown-preview-view.network-note hr {
+  height: 1px;
+  margin: 2.6em auto;
+  border: 0;
+  background: linear-gradient(90deg, transparent, var(--network-border) 15%, var(--network-border) 85%, transparent);
+}
+
+.markdown-preview-view.network-note.exam-note {
+  --file-line-width: 960px;
+}
+
+.markdown-preview-view.network-note.exam-note h2 {
+  margin-top: 3.2em;
+  padding: 0.7em 0.85em;
+  border-left-width: 6px;
+  font-size: 1.65em;
+}
+
+.markdown-preview-view.network-note.exam-note h3 {
+  margin-top: 2.25em;
+}
+
+.markdown-source-view.network-note.exam-note .HyperMD-header-2 {
+  margin-top: 2.15em;
+  padding: 0.62em 0.78em;
+  border-left-width: 6px;
+}
+
+.markdown-preview-view.network-note.exam-note .callout[data-callout="abstract"] {
+  border-width: 1px 1px 1px 4px;
+}
+
+@media (max-width: 700px) {
+  .markdown-preview-view.network-note h2 {
+    padding-right: 0.35em;
+    font-size: 1.35em;
+  }
+
+  .markdown-preview-view.network-note table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}

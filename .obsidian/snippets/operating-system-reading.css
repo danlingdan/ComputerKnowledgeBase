@@ -1,0 +1,168 @@
+/* 操作系统课程笔记：仅作用于含 os-note cssclass 的笔记。 */
+
+.markdown-preview-view.os-note,
+.markdown-source-view.os-note {
+  --file-line-width: 900px;
+  --os-accent: color-mix(in srgb, var(--interactive-accent) 82%, var(--color-cyan));
+  --os-soft-accent: color-mix(in srgb, var(--os-accent) 11%, transparent);
+  --os-border: color-mix(in srgb, var(--text-muted) 25%, transparent);
+  --os-shadow: 0 8px 26px color-mix(in srgb, var(--background-modifier-box-shadow) 32%, transparent);
+}
+
+.markdown-preview-view.os-note .markdown-preview-sizer {
+  padding-bottom: 12vh;
+}
+
+.markdown-preview-view.os-note .inline-title,
+.markdown-source-view.os-note .inline-title {
+  display: none;
+}
+
+/* 阅读视图保留正文，把 Properties 留给编辑视图与侧边栏。 */
+.markdown-preview-view.os-note .metadata-container {
+  display: none;
+}
+
+.markdown-source-view.os-note .cm-line {
+  line-height: 1.74;
+}
+
+.markdown-source-view.os-note .HyperMD-header-1,
+.markdown-preview-view.os-note h1 {
+  margin-top: 0.65em;
+  padding-bottom: 0.45em;
+  border-bottom: 2px solid var(--os-accent);
+  letter-spacing: 0.035em;
+  line-height: 1.3;
+}
+
+.markdown-source-view.os-note .HyperMD-header-2,
+.markdown-preview-view.os-note h2 {
+  margin-top: 2.3em;
+  padding: 0.5em 0.7em;
+  border-left: 5px solid var(--os-accent);
+  border-bottom: 1px solid var(--os-border);
+  border-radius: 0 9px 9px 0;
+  background: linear-gradient(90deg, var(--os-soft-accent), transparent 76%);
+  letter-spacing: 0.025em;
+}
+
+.markdown-source-view.os-note .HyperMD-header-3,
+.markdown-preview-view.os-note h3 {
+  margin-top: 1.75em;
+  padding-bottom: 0.25em;
+  border-bottom: 1px dashed var(--os-border);
+  color: var(--text-normal);
+}
+
+.markdown-preview-view.os-note h4,
+.markdown-preview-view.os-note h5,
+.markdown-preview-view.os-note h6 {
+  margin-top: 1.5em;
+  color: var(--text-normal);
+}
+
+.markdown-preview-view.os-note p,
+.markdown-preview-view.os-note li {
+  line-height: 1.8;
+}
+
+.markdown-preview-view.os-note li + li {
+  margin-top: 0.25em;
+}
+
+.markdown-preview-view.os-note strong {
+  color: color-mix(in srgb, var(--text-normal) 82%, var(--os-accent));
+}
+
+.markdown-preview-view.os-note mark {
+  padding: 0.08em 0.24em;
+  border-radius: 4px;
+  background: color-mix(in srgb, var(--text-highlight-bg) 86%, transparent);
+}
+
+.markdown-preview-view.os-note a.internal-link {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+.markdown-preview-view.os-note .callout {
+  margin: 1.4em 0;
+  border-radius: 10px;
+  box-shadow: 0 3px 13px color-mix(in srgb, var(--background-modifier-box-shadow) 22%, transparent);
+}
+
+.markdown-preview-view.os-note .callout-title {
+  letter-spacing: 0.015em;
+}
+
+.markdown-preview-view.os-note table {
+  display: table;
+  width: 100%;
+  margin: 1.35em 0 1.8em;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  border: 1px solid var(--os-border);
+  border-radius: 9px;
+  box-shadow: 0 3px 12px color-mix(in srgb, var(--background-modifier-box-shadow) 17%, transparent);
+}
+
+.markdown-preview-view.os-note th {
+  background: var(--os-soft-accent);
+  font-weight: 650;
+}
+
+.markdown-preview-view.os-note th,
+.markdown-preview-view.os-note td {
+  padding: 0.64em 0.8em;
+  vertical-align: top;
+}
+
+.markdown-preview-view.os-note tbody tr:nth-child(even) {
+  background: color-mix(in srgb, var(--background-secondary) 43%, transparent);
+}
+
+.markdown-preview-view.os-note .image-embed img,
+.markdown-preview-view.os-note img {
+  display: block;
+  max-width: min(100%, 900px);
+  height: auto;
+  margin: 1.3em auto 0.75em;
+  border: 1px solid var(--os-border);
+  border-radius: 10px;
+  box-shadow: var(--os-shadow);
+}
+
+.markdown-preview-view.os-note pre,
+.markdown-preview-view.os-note .math-block,
+.markdown-preview-view.os-note .mermaid {
+  overflow-x: auto;
+  border-radius: 9px;
+}
+
+.markdown-preview-view.os-note code:not(pre code) {
+  padding: 0.1em 0.32em;
+  border: 1px solid var(--os-border);
+  border-radius: 4px;
+}
+
+.markdown-preview-view.os-note hr {
+  height: 1px;
+  margin: 2.6em auto;
+  border: 0;
+  background: linear-gradient(90deg, transparent, var(--os-border) 15%, var(--os-border) 85%, transparent);
+}
+
+@media (max-width: 700px) {
+  .markdown-preview-view.os-note h2 {
+    padding-right: 0.35em;
+    font-size: 1.35em;
+  }
+
+  .markdown-preview-view.os-note table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
