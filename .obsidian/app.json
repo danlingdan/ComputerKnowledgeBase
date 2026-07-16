@@ -1,0 +1,19 @@
+{
+  "promptDelete": false,
+  "alwaysUpdateLinks": true,
+  "showUnsupportedFiles": true,
+  "trashOption": "none",
+  "uriCallbacks": true,
+  "userIgnoreFilters": [
+    "Templates/"
+  ],
+  "spellcheck": false,
+  "showLineNumber": false,
+  "attachmentFolderPath": "assets",
+  "pdfExportSettings": {
+    "pageSize": "Letter",
+    "landscape": false,
+    "margin": "0",
+    "downscalePercent": 100
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "enabledCssSnippets": [
+    "computer-network-reading",
+    "operating-system-reading"
+  ],
+  "baseFontSizeAction": true,
+  "baseFontSize": 15
+}

@@ -1,6 +1,13 @@
-.obsidian/*
-!.obsidian/plugins/
-!.obsidian/snippets/
+# Share the complete Obsidian setup: core settings, plugins, plugin settings,
+# snippets, themes, and other vault configuration.
+!.obsidian/
+!.obsidian/**
+
+# Credential-bearing plugin data must stay local. Share sanitized examples
+# separately if collaborators need the corresponding configuration shape.
+.obsidian/plugins/remotely-save/data.json
+.obsidian/plugins/obsidian-local-rest-api/data.json
+
 .trash/
 *.log
 .DS_Store

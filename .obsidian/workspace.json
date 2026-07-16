@@ -1,0 +1,269 @@
+{
+  "main": {
+    "id": "69aa3c27c78e3703",
+    "type": "split",
+    "children": [
+      {
+        "id": "7ae3dd6a292b28fa",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5d104813f78e9aaf",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "网络与安全/计算机网络A/知识点/期末考试重点知识.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "期末考试重点知识"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "bb9d76ea93c0d07c",
+    "type": "split",
+    "children": [
+      {
+        "id": "9bd2465e94dff525",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "72be7369643f5d60",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "9f7128cac5f38527",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "7029e445f6c9c103",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 315.5
+  },
+  "right": {
+    "id": "0fb0e14e57529959",
+    "type": "split",
+    "children": [
+      {
+        "id": "8de6126b2c1b6e08",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c7f5c6c5d73e992d",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "777d9c7c1d97069b",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "385ca20fea90f31c",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "3ba05e6ce810d5d4",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "1422c99ec0c9f032",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          },
+          {
+            "id": "f8d2694653912681",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
+          },
+          {
+            "id": "5af50721b4f4bfe3",
+            "type": "leaf",
+            "state": {
+              "type": "smart-connections-view",
+              "state": {},
+              "icon": "lucide-ghost",
+              "title": "smart-connections-view"
+            }
+          },
+          {
+            "id": "d6f640a625990c2d",
+            "type": "leaf",
+            "state": {
+              "type": "claudian-view",
+              "state": {},
+              "icon": "bot",
+              "title": "Claudian"
+            }
+          }
+        ],
+        "currentTab": 5
+      }
+    ],
+    "direction": "horizontal",
+    "width": 352.5
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "realclaudian:Open Claudian": false,
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false,
+      "obsidian-git:Open Git source control": false,
+      "templater-obsidian:Templater": false,
+      "obsidian-excalidraw-plugin:New drawing": false,
+      "markdown-importer:Open format converter": false
+    }
+  },
+  "active": "f8d2694653912681",
+  "lastOpenFiles": [
+    "网络与安全/计算机网络A/知识点/期末考试重点知识.md",
+    "计算机系统/操作系统/MOC - 操作系统.md",
+    "计算机系统/操作系统/知识点/第六部分 例子/例子 - Windows 操作系统.md",
+    "计算机系统/操作系统/知识点/第4部分 存储管理/第十章 文件系统.md",
+    "计算机系统/操作系统/知识点/第4部分 存储管理/第十三章 IO系统.md",
+    "计算机系统/操作系统/知识点/第4部分 存储管理/第十二章 大容量存储设备.md",
+    "计算机系统/操作系统/知识点/第4部分 存储管理/第十一章 文件系统实现.md",
+    "计算机系统/操作系统/知识点/第1部分 概论/第二章 操作系统结构.md",
+    "计算机系统/操作系统/知识点/第1部分 概论/第一章 导论.md",
+    "计算机系统/操作系统/知识点/第3部分 内存管理/9.4 页面置换.md",
+    "计算机系统/操作系统/知识点/第4部分 存储管理/13.7 性能.md",
+    "计算机系统/操作系统/知识点/第4部分 存储管理/13.6 流.md",
+    "计算机系统/操作系统/知识点/第4部分 存储管理/13.5 I - O 请求转换为硬件操作.md",
+    "计算机系统/操作系统/知识点/第4部分 存储管理/13.4 内核 I - O 子系统.md",
+    "计算机系统/操作系统/知识点/第4部分 存储管理/13.3 应用程序 I - O 接口.md",
+    "计算机系统/操作系统/知识点/第4部分 存储管理/13.2 I - O 硬件.md",
+    "计算机系统/操作系统/知识点/第4部分 存储管理/13.1 概述.md",
+    "计算机系统/操作系统/知识点/第4部分 存储管理/12.8 稳定存储实现.md",
+    "计算机系统/操作系统/知识点/第4部分 存储管理/12.3 磁盘连接.md",
+    "计算机系统/操作系统/知识点/第4部分 存储管理/11.8 NFS.md",
+    "计算机系统/操作系统/知识点/第1部分 概论/2.9 系统引导.md",
+    "计算机系统/操作系统/重构映射.json",
+    "计算机系统/操作系统/知识点/第5部分 保护与安全/15.9 例子 - Windows 7.md",
+    "计算机系统/操作系统/知识点/第5部分 保护与安全/15.8 计算机安全等级.md",
+    "计算机系统/操作系统/知识点/第5部分 保护与安全/15.7 保护系统和网络的防火墙.md",
+    "计算机系统/操作系统/知识点/第5部分 保护与安全/15.6 实现安全防御.md",
+    "计算机系统/操作系统/知识点/第5部分 保护与安全/15.5 用户认证.md",
+    "计算机系统/操作系统/原始章笔记/第十四章 系统保护.md.original",
+    "计算机系统/操作系统/原始章笔记/第十五章 系统安全.md.original",
+    "计算机系统/操作系统/原始章笔记/第十章 文件系统.md.original",
+    "计算机系统/操作系统/原始章笔记/第十二章 大容量存储设备.md.original",
+    "计算机系统/操作系统/原始章笔记/第十三章 IO系统.md.original",
+    "计算机系统/操作系统/原始章笔记/第十一章 文件系统实现.md.original",
+    "计算机系统/操作系统/原始章笔记/第八章 内存管理策略.md.original",
+    "计算机系统/操作系统/原始章笔记/第九章 虚拟内存管理.md.original",
+    "计算机系统/操作系统/原始章笔记/第四章 多线程编程.md.original",
+    "assets/Pasted image 20260716173208.png",
+    "assets/Pasted image 20260716173142.png",
+    "assets/Pasted image 20260716173135.png",
+    "assets/Pasted image 20260716173125.png",
+    "assets/Pasted image 20260716173110.png",
+    "assets/Pasted image 20260716173102.png",
+    "assets/Pasted image 20260716173053.png",
+    "assets/Pasted image 20260716173043.png",
+    "assets/Pasted image 20260716173034.png",
+    "assets/Pasted image 20260716173027.png",
+    "Untitled.canvas",
+    "Untitled 1.canvas"
+  ]
+}
