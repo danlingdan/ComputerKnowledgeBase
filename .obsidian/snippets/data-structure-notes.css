@@ -1,0 +1,557 @@
+/*
+ * 数据结构课程阅读样式
+ * 仅作用于 Frontmatter 含 data-structure-note 的笔记，不影响知识库其他内容。
+ */
+
+.markdown-preview-view.data-structure-note,
+.markdown-source-view.data-structure-note {
+  --file-line-width: 920px;
+  --ds-accent: color-mix(in srgb, var(--interactive-accent) 76%, var(--color-cyan));
+  --ds-accent-2: color-mix(in srgb, var(--interactive-accent) 68%, var(--color-purple));
+  --ds-soft: color-mix(in srgb, var(--ds-accent) 11%, transparent);
+  --ds-soft-strong: color-mix(in srgb, var(--ds-accent) 17%, transparent);
+  --ds-border: color-mix(in srgb, var(--text-muted) 24%, transparent);
+  --ds-border-strong: color-mix(in srgb, var(--ds-accent) 34%, var(--ds-border));
+  --ds-surface: color-mix(in srgb, var(--background-secondary) 62%, transparent);
+  --ds-shadow: 0 10px 28px color-mix(in srgb, var(--background-modifier-box-shadow) 32%, transparent);
+}
+
+.markdown-preview-view.data-structure-moc,
+.markdown-source-view.data-structure-moc {
+  --file-line-width: 1040px;
+}
+
+.markdown-preview-view.data-structure-note .markdown-preview-sizer {
+  padding-bottom: 14vh;
+}
+
+/* 正文已经有一级标题，隐藏重复的行内文件名；阅读视图把 Properties 留给侧边栏。 */
+.markdown-preview-view.data-structure-note .inline-title,
+.markdown-source-view.data-structure-note .inline-title,
+.markdown-preview-view.data-structure-note .metadata-container {
+  display: none;
+}
+
+/* 编辑视图中的 Properties 保持可编辑，但压缩为一张安静的信息卡。 */
+.markdown-source-view.data-structure-note .metadata-container {
+  margin: 0.6rem 0 1.2rem;
+  padding: 0.45rem 0.7rem;
+  border: 1px solid var(--ds-border);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--background-secondary) 52%, transparent);
+}
+
+.markdown-source-view.data-structure-note .metadata-properties-heading {
+  color: var(--text-muted);
+  font-size: 0.82em;
+  letter-spacing: 0.06em;
+}
+
+.markdown-source-view.data-structure-note .cm-line {
+  line-height: 1.76;
+}
+
+/* 标题：一级标题承担页面身份，二级标题切分知识块，三级标题标记局部主题。 */
+.markdown-preview-view.data-structure-note h1,
+.markdown-source-view.data-structure-note .HyperMD-header-1 {
+  position: relative;
+  margin-top: 0.55em;
+  margin-bottom: 1.05em;
+  padding: 0 0 0.5em;
+  border-bottom: 1px solid var(--ds-border);
+  color: color-mix(in srgb, var(--text-normal) 80%, var(--ds-accent));
+  font-weight: 760;
+  letter-spacing: 0.035em;
+  line-height: 1.28;
+}
+
+.markdown-preview-view.data-structure-note h1::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: min(32%, 210px);
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--ds-accent), var(--ds-accent-2));
+}
+
+.markdown-preview-view.data-structure-note h2,
+.markdown-source-view.data-structure-note .HyperMD-header-2 {
+  margin-top: 2.1em;
+  margin-bottom: 0.9em;
+  padding: 0.5em 0.72em;
+  border-left: 5px solid var(--ds-accent);
+  border-bottom: 1px solid var(--ds-border);
+  border-radius: 0 10px 10px 0;
+  background: linear-gradient(90deg, var(--ds-soft-strong), var(--ds-soft) 46%, transparent 88%);
+  color: var(--text-normal);
+  font-weight: 720;
+  letter-spacing: 0.025em;
+  line-height: 1.36;
+}
+
+.markdown-preview-view.data-structure-note h3,
+.markdown-source-view.data-structure-note .HyperMD-header-3 {
+  margin-top: 1.95em;
+  margin-bottom: 0.72em;
+  padding-bottom: 0.3em;
+  border-bottom: 1px dashed var(--ds-border-strong);
+  color: color-mix(in srgb, var(--text-normal) 88%, var(--ds-accent));
+  font-weight: 680;
+}
+
+.markdown-preview-view.data-structure-note h4,
+.markdown-preview-view.data-structure-note h5,
+.markdown-preview-view.data-structure-note h6 {
+  margin-top: 1.55em;
+  color: var(--text-normal);
+}
+
+/* 中文正文适度增加行距和字距，长段落更容易追踪。 */
+.markdown-preview-view.data-structure-note p,
+.markdown-preview-view.data-structure-note li {
+  line-height: 1.82;
+  letter-spacing: 0.008em;
+}
+
+.markdown-preview-view.data-structure-note p {
+  margin-block: 0.78em;
+  text-align: justify;
+  text-justify: inter-ideograph;
+}
+
+.markdown-preview-view.data-structure-note li + li {
+  margin-top: 0.28em;
+}
+
+.markdown-preview-view.data-structure-note ul,
+.markdown-preview-view.data-structure-note ol {
+  padding-inline-start: 1.65em;
+}
+
+.markdown-preview-view.data-structure-note li::marker {
+  color: var(--ds-accent);
+  font-weight: 700;
+}
+
+.markdown-preview-view.data-structure-note strong {
+  color: color-mix(in srgb, var(--text-normal) 82%, var(--ds-accent));
+  font-weight: 700;
+}
+
+.markdown-preview-view.data-structure-note mark {
+  padding: 0.08em 0.26em;
+  border-radius: 4px;
+  background: color-mix(in srgb, var(--text-highlight-bg) 86%, transparent);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.markdown-preview-view.data-structure-note a.internal-link {
+  font-weight: 560;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  text-decoration-color: color-mix(in srgb, var(--link-color) 42%, transparent);
+}
+
+.markdown-preview-view.data-structure-note a.internal-link:hover {
+  text-decoration-color: var(--link-color-hover);
+}
+
+/* Callout 统一外观；导航、归属、概览和索引使用专门语义。 */
+.markdown-preview-view.data-structure-note .callout,
+.markdown-source-view.data-structure-note .callout {
+  margin: 1.35em 0;
+  border-width: 1px 1px 1px 4px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px color-mix(in srgb, var(--background-modifier-box-shadow) 21%, transparent);
+}
+
+.markdown-preview-view.data-structure-note .callout-title,
+.markdown-source-view.data-structure-note .callout-title {
+  gap: 0.48em;
+  letter-spacing: 0.018em;
+}
+
+.markdown-preview-view.data-structure-note .callout-content > :first-child {
+  margin-top: 0.35em;
+}
+
+.markdown-preview-view.data-structure-note .callout-content > :last-child {
+  margin-bottom: 0.35em;
+}
+
+.data-structure-note .callout[data-callout="nav"] {
+  --callout-color: 83, 146, 255;
+  --callout-icon: lucide-compass;
+  background: linear-gradient(105deg, rgba(83, 146, 255, 0.13), rgba(83, 146, 255, 0.035));
+}
+
+.data-structure-note .callout[data-callout="topic"] {
+  --callout-color: 151, 104, 255;
+  --callout-icon: lucide-network;
+  background: linear-gradient(105deg, rgba(151, 104, 255, 0.12), rgba(151, 104, 255, 0.03));
+}
+
+.data-structure-note .callout[data-callout="overview"] {
+  --callout-color: 45, 174, 188;
+  --callout-icon: lucide-map;
+  background: linear-gradient(105deg, rgba(45, 174, 188, 0.13), rgba(45, 174, 188, 0.035));
+}
+
+.data-structure-note .callout[data-callout="index"] {
+  --callout-color: 62, 170, 112;
+  --callout-icon: lucide-list-tree;
+  background: linear-gradient(105deg, rgba(62, 170, 112, 0.13), rgba(62, 170, 112, 0.035));
+}
+
+.data-structure-note .callout[data-callout="nav"] .callout-content p,
+.data-structure-note .callout[data-callout="topic"] .callout-content p {
+  margin-block: 0.28em;
+  text-align: left;
+}
+
+/* 代码、行内代码与公式形成独立阅读层。 */
+.markdown-preview-view.data-structure-note pre {
+  margin: 1.35em 0 1.65em;
+  border: 1px solid var(--ds-border);
+  border-radius: 11px;
+  box-shadow: 0 5px 18px color-mix(in srgb, var(--background-modifier-box-shadow) 19%, transparent);
+}
+
+.markdown-preview-view.data-structure-note pre code {
+  line-height: 1.65;
+  tab-size: 4;
+}
+
+.markdown-preview-view.data-structure-note code:not(pre code) {
+  padding: 0.11em 0.34em;
+  border: 1px solid var(--ds-border);
+  border-radius: 5px;
+  background: color-mix(in srgb, var(--code-background) 88%, var(--ds-soft));
+  color: color-mix(in srgb, var(--code-normal) 86%, var(--ds-accent));
+}
+
+.markdown-preview-view.data-structure-note .math-block {
+  margin: 1.25em 0;
+  padding: 0.72em 1em;
+  overflow-x: auto;
+  border: 1px solid var(--ds-border);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--background-secondary) 42%, transparent);
+}
+
+/* 对比表格：全宽、斑马纹、强调表头；窄屏自动横向滚动。 */
+.markdown-preview-view.data-structure-note table {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin: 1.35em 0 1.85em;
+  overflow-x: auto;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  border: 1px solid var(--ds-border);
+  border-radius: 11px;
+  box-shadow: 0 4px 16px color-mix(in srgb, var(--background-modifier-box-shadow) 18%, transparent);
+}
+
+.markdown-preview-view.data-structure-note th {
+  background: linear-gradient(180deg, var(--ds-soft-strong), var(--ds-soft));
+  color: var(--text-normal);
+  font-weight: 700;
+  letter-spacing: 0.018em;
+}
+
+.markdown-preview-view.data-structure-note th,
+.markdown-preview-view.data-structure-note td {
+  min-width: 7.2em;
+  padding: 0.66em 0.82em;
+  vertical-align: top;
+  line-height: 1.65;
+}
+
+.markdown-preview-view.data-structure-note th {
+  white-space: nowrap;
+}
+
+.markdown-preview-view.data-structure-note th:first-child,
+.markdown-preview-view.data-structure-note td:first-child {
+  min-width: 5.8em;
+  word-break: keep-all;
+}
+
+.markdown-preview-view.data-structure-note tbody tr:nth-child(even) {
+  background: color-mix(in srgb, var(--background-secondary) 46%, transparent);
+}
+
+.markdown-preview-view.data-structure-note tbody tr:hover {
+  background: var(--ds-soft);
+}
+
+/* 教材插图通常是白底扫描图：统一留白、圆角和阴影，并保持居中。 */
+.markdown-preview-view.data-structure-note .image-embed img,
+.markdown-preview-view.data-structure-note img {
+  display: block;
+  max-width: min(100%, 920px);
+  height: auto;
+  margin: 1.45em auto 0.9em;
+  padding: clamp(4px, 0.8vw, 10px);
+  border: 1px solid var(--ds-border);
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: var(--ds-shadow);
+}
+
+.markdown-preview-view.data-structure-note p:has(> .image-embed) {
+  text-align: center;
+}
+
+.markdown-preview-view.data-structure-note .mermaid {
+  margin: 1.45em 0;
+  padding: 1.1em;
+  overflow-x: auto;
+  border: 1px solid var(--ds-border);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--background-secondary) 42%, transparent);
+  box-shadow: 0 5px 18px color-mix(in srgb, var(--background-modifier-box-shadow) 17%, transparent);
+}
+
+.markdown-preview-view.data-structure-note blockquote:not(.callout) {
+  margin: 1.25em 0;
+  padding: 0.25em 1em;
+  border-left: 4px solid var(--ds-border-strong);
+  color: var(--text-muted);
+  background: var(--ds-surface);
+}
+
+.markdown-preview-view.data-structure-note hr {
+  height: 1px;
+  margin: 1.8em auto;
+  border: 0;
+  background: linear-gradient(90deg, transparent, var(--ds-border) 14%, var(--ds-border) 86%, transparent);
+}
+
+/* MOC：更宽的内容区与更明显的层次树。 */
+.markdown-preview-view.data-structure-moc h3,
+.markdown-source-view.data-structure-moc .HyperMD-header-3 {
+  padding: 0.38em 0.58em;
+  border-bottom: 0;
+  border-left: 3px solid var(--ds-accent-2);
+  border-radius: 0 7px 7px 0;
+  background: color-mix(in srgb, var(--ds-accent-2) 8%, transparent);
+}
+
+.markdown-preview-view.data-structure-moc ul ul {
+  margin-top: 0.26em;
+  margin-bottom: 0.4em;
+  padding-left: 1.25em;
+  border-left: 1px solid var(--ds-border-strong);
+  color: var(--text-muted);
+  font-size: 0.94em;
+}
+
+.markdown-preview-view.data-structure-moc ul ul li::marker {
+  color: var(--text-muted);
+}
+
+.markdown-preview-view.data-structure-moc table th:first-child,
+.markdown-preview-view.data-structure-moc table td:first-child {
+  white-space: nowrap;
+}
+
+@media (max-width: 760px) {
+  .markdown-preview-view.data-structure-note,
+  .markdown-source-view.data-structure-note {
+    --file-line-width: 100%;
+  }
+
+  .markdown-preview-view.data-structure-note h1 {
+    font-size: 1.85em;
+  }
+
+  .markdown-preview-view.data-structure-note h2 {
+    padding-right: 0.38em;
+    font-size: 1.34em;
+  }
+
+  .markdown-preview-view.data-structure-note p {
+    text-align: left;
+  }
+
+  .markdown-preview-view.data-structure-note table {
+    scrollbar-width: thin;
+  }
+
+  .markdown-preview-view.data-structure-note th,
+  .markdown-preview-view.data-structure-note td {
+    min-width: 7.5em;
+  }
+
+  .data-structure-note .callout[data-callout="nav"] .callout-content p {
+    line-height: 1.72;
+  }
+}
+
+@media print {
+  .markdown-preview-view.data-structure-note .callout,
+  .markdown-preview-view.data-structure-note table,
+  .markdown-preview-view.data-structure-note img,
+  .markdown-preview-view.data-structure-note pre,
+  .markdown-preview-view.data-structure-note .mermaid {
+    box-shadow: none;
+  }
+}
+
+/* 完整解答：题目、选项、答案与推导形成稳定的四层阅读结构。 */
+.markdown-preview-view.data-structure-solutions,
+.markdown-source-view.data-structure-solutions {
+  --file-line-width: 1020px;
+}
+
+.markdown-preview-view.data-structure-solutions h4,
+.markdown-source-view.data-structure-solutions .HyperMD-header-4 {
+  margin-top: 1.8em;
+  margin-bottom: 0.7em;
+  padding: 0.56em 0.76em;
+  border-left: 3px solid var(--ds-accent);
+  border-radius: 0 8px 8px 0;
+  background: color-mix(in srgb, var(--ds-accent) 7%, transparent);
+  color: var(--text-normal);
+  line-height: 1.5;
+}
+
+.markdown-preview-view.data-structure-solutions h5,
+.markdown-source-view.data-structure-solutions .HyperMD-header-5 {
+  margin-top: 1.45em;
+  color: color-mix(in srgb, var(--text-normal) 84%, var(--ds-accent-2));
+}
+
+.markdown-preview-view.data-structure-solutions h4 + ul,
+.markdown-preview-view.data-structure-solutions h4 + p + ul {
+  margin: 0.35em 0 0.85em;
+  padding: 0.5em 0.75em;
+  border: 1px solid var(--ds-border);
+  border-radius: 9px;
+  background: color-mix(in srgb, var(--background-secondary) 30%, transparent);
+  list-style: none;
+}
+
+.markdown-preview-view.data-structure-solutions h4 + ul > li,
+.markdown-preview-view.data-structure-solutions h4 + p + ul > li {
+  margin: 0;
+  padding: 0.24em 0.36em;
+  border-radius: 6px;
+}
+
+.markdown-preview-view.data-structure-solutions h4 + ul > li:hover,
+.markdown-preview-view.data-structure-solutions h4 + p + ul > li:hover {
+  background: var(--ds-soft);
+}
+
+.markdown-preview-view.data-structure-solutions h4 + ul > li > strong:first-child,
+.markdown-preview-view.data-structure-solutions h4 + p + ul > li > strong:first-child {
+  display: inline-block;
+  min-width: 2em;
+  color: var(--ds-accent);
+}
+
+/* “答案/解答”开头的段落在阅读视图中作为结论卡显示。 */
+.markdown-preview-view.data-structure-solutions p:has(> strong:first-child) {
+  padding: 0.62em 0.78em;
+  border: 1px solid color-mix(in srgb, var(--color-green) 30%, var(--ds-border));
+  border-left: 4px solid color-mix(in srgb, var(--color-green) 70%, var(--ds-accent));
+  border-radius: 9px;
+  background: color-mix(in srgb, var(--color-green) 7%, transparent);
+  text-align: left;
+}
+
+.markdown-preview-view.data-structure-solutions .callout[data-callout="question"] {
+  --callout-color: 116, 125, 140;
+  --callout-icon: lucide-file-question;
+  background: color-mix(in srgb, var(--background-secondary) 50%, transparent);
+}
+
+@media print {
+  .markdown-preview-view.data-structure-solutions h4,
+  .markdown-preview-view.data-structure-solutions h5,
+  .markdown-preview-view.data-structure-solutions p:has(> strong:first-child) {
+    break-after: avoid;
+  }
+}
+
+/* 习题集：强化题型、题干、选项和插图题注的层次。 */
+.markdown-preview-view.data-structure-exercises,
+.markdown-source-view.data-structure-exercises {
+  --file-line-width: 980px;
+}
+
+.markdown-preview-view.data-structure-exercises h2 {
+  margin-top: 2.8em;
+}
+
+.markdown-preview-view.data-structure-exercises h3,
+.markdown-source-view.data-structure-exercises .HyperMD-header-3 {
+  padding: 0.46em 0.68em;
+  border: 1px solid var(--ds-border);
+  border-left: 4px solid var(--ds-accent-2);
+  border-radius: 9px;
+  background: color-mix(in srgb, var(--ds-accent-2) 7%, transparent);
+}
+
+/* 以加粗编号开头的段落是题干。 */
+.markdown-preview-view.data-structure-exercises p:has(> strong:first-child) {
+  margin-bottom: 0.55em;
+  padding: 0.72em 0.86em;
+  border-left: 3px solid var(--ds-border-strong);
+  border-radius: 0 8px 8px 0;
+  background: color-mix(in srgb, var(--background-secondary) 48%, transparent);
+  text-align: left;
+}
+
+/* 选择题选项使用独立行，避免 A—D 在阅读视图中挤成一个段落。 */
+.markdown-preview-view.data-structure-exercises ul:has(> li > strong:first-child) {
+  margin: 0.45em 0 1.25em;
+  padding: 0.48em 0.72em;
+  border: 1px solid var(--ds-border);
+  border-radius: 9px;
+  background: color-mix(in srgb, var(--background-secondary) 28%, transparent);
+  list-style: none;
+}
+
+.markdown-preview-view.data-structure-exercises ul:has(> li > strong:first-child) li {
+  margin: 0;
+  padding: 0.26em 0.4em;
+  border-radius: 6px;
+}
+
+.markdown-preview-view.data-structure-exercises ul:has(> li > strong:first-child) li:hover {
+  background: var(--ds-soft);
+}
+
+.markdown-preview-view.data-structure-exercises ul:has(> li > strong:first-child) li > strong:first-child {
+  display: inline-block;
+  min-width: 2em;
+  color: var(--ds-accent);
+}
+
+.markdown-preview-view.data-structure-exercises p:has(> em:only-child) {
+  margin-top: -0.3em;
+  color: var(--text-muted);
+  font-size: 0.9em;
+  text-align: center;
+}
+
+.markdown-preview-view.data-structure-exercises .image-embed img {
+  max-width: min(100%, 780px);
+}
+
+@media print {
+  .markdown-preview-view.data-structure-exercises h2,
+  .markdown-preview-view.data-structure-exercises h3,
+  .markdown-preview-view.data-structure-exercises p:has(> strong:first-child),
+  .markdown-preview-view.data-structure-exercises ul:has(> li > strong:first-child) {
+    break-after: avoid;
+  }
+}

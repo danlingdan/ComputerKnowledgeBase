@@ -9,7 +9,7 @@
   ],
   "spellcheck": false,
   "showLineNumber": false,
-  "attachmentFolderPath": "assets",
+  "attachmentFolderPath": "./Attachments",
   "pdfExportSettings": {
     "pageSize": "Letter",
     "landscape": false,

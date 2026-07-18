@@ -27,6 +27,13 @@
         "a": 1,
         "rgb": 11657298
       }
+    },
+    {
+      "query": "tag:#数据结构  ",
+      "color": {
+        "a": 1,
+        "rgb": 5431378
+      }
     }
   ],
   "collapse-display": true,
@@ -39,6 +46,6 @@
   "repelStrength": 16.2110726643599,
   "linkStrength": 1,
   "linkDistance": 234,
-  "scale": 0.7132754626223836,
+  "scale": 0.18462326225856454,
   "close": true
 }
