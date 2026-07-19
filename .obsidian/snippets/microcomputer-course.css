@@ -1,0 +1,211 @@
+/* 微机原理与接口技术：仅作用于含 microcomputer-course cssclass 的笔记。 */
+
+.markdown-preview-view.microcomputer-course,
+.markdown-source-view.microcomputer-course {
+  --file-line-width: 960px;
+  --micro-accent: color-mix(in srgb, var(--interactive-accent) 78%, var(--color-cyan));
+  --micro-accent-soft: color-mix(in srgb, var(--micro-accent) 11%, transparent);
+  --micro-border: color-mix(in srgb, var(--text-muted) 28%, transparent);
+  --micro-shadow: 0 8px 28px color-mix(in srgb, var(--background-modifier-box-shadow) 34%, transparent);
+}
+
+.markdown-preview-view.microcomputer-course .markdown-preview-sizer {
+  padding-bottom: 12vh;
+}
+
+/* 正文已有语义化 H1，阅读视图隐藏重复的内联文件名与 Properties。 */
+.markdown-preview-view.microcomputer-course .inline-title,
+.markdown-source-view.microcomputer-course .inline-title,
+.markdown-preview-view.microcomputer-course .metadata-container {
+  display: none;
+}
+
+.markdown-source-view.microcomputer-course .cm-line,
+.markdown-preview-view.microcomputer-course p,
+.markdown-preview-view.microcomputer-course li {
+  line-height: 1.8;
+}
+
+.markdown-preview-view.microcomputer-course li + li {
+  margin-top: 0.22em;
+}
+
+.markdown-source-view.microcomputer-course .HyperMD-header-1,
+.markdown-preview-view.microcomputer-course h1 {
+  margin-top: 0.55em;
+  padding-bottom: 0.45em;
+  border-bottom: 2px solid var(--micro-accent);
+  letter-spacing: 0.035em;
+  line-height: 1.3;
+}
+
+.markdown-source-view.microcomputer-course .HyperMD-header-2,
+.markdown-preview-view.microcomputer-course h2 {
+  margin-top: 2.25em;
+  padding: 0.5em 0.72em;
+  border-left: 5px solid var(--micro-accent);
+  border-bottom: 1px solid var(--micro-border);
+  border-radius: 0 9px 9px 0;
+  background: linear-gradient(90deg, var(--micro-accent-soft), transparent 78%);
+  letter-spacing: 0.025em;
+}
+
+.markdown-source-view.microcomputer-course .HyperMD-header-3,
+.markdown-preview-view.microcomputer-course h3 {
+  margin-top: 1.8em;
+  padding-bottom: 0.28em;
+  border-bottom: 1px dashed var(--micro-border);
+}
+
+.markdown-preview-view.microcomputer-course h4,
+.markdown-preview-view.microcomputer-course h5,
+.markdown-preview-view.microcomputer-course h6 {
+  margin-top: 1.55em;
+  color: var(--text-normal);
+}
+
+.markdown-preview-view.microcomputer-course h4::before {
+  content: "◆";
+  margin-right: 0.42em;
+  color: var(--micro-accent);
+  font-size: 0.72em;
+  vertical-align: 0.12em;
+}
+
+.markdown-preview-view.microcomputer-course strong {
+  color: color-mix(in srgb, var(--text-normal) 82%, var(--micro-accent));
+}
+
+.markdown-preview-view.microcomputer-course a.internal-link {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+.markdown-preview-view.microcomputer-course .callout {
+  margin: 1.35em 0;
+  border-radius: 10px;
+  box-shadow: 0 3px 14px color-mix(in srgb, var(--background-modifier-box-shadow) 23%, transparent);
+}
+
+.markdown-preview-view.microcomputer-course .callout-title {
+  letter-spacing: 0.015em;
+}
+
+/* 宽表格保持自然列宽并横向滚动，避免 Obsidian 把单元格压到无法阅读。 */
+.markdown-preview-view.microcomputer-course table {
+  display: block;
+  width: max-content;
+  min-width: 100%;
+  max-width: 100%;
+  margin: 1.35em 0 1.8em;
+  overflow-x: auto;
+  border: 1px solid var(--micro-border);
+  border-radius: 9px;
+  border-collapse: separate;
+  border-spacing: 0;
+  box-shadow: 0 3px 12px color-mix(in srgb, var(--background-modifier-box-shadow) 18%, transparent);
+}
+
+.markdown-preview-view.microcomputer-course th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: color-mix(in srgb, var(--background-secondary) 78%, var(--micro-accent-soft));
+  font-weight: 650;
+}
+
+.markdown-preview-view.microcomputer-course th,
+.markdown-preview-view.microcomputer-course td {
+  min-width: 5.2rem;
+  padding: 0.62em 0.78em;
+  vertical-align: top;
+}
+
+.markdown-preview-view.microcomputer-course tbody tr:nth-child(even) {
+  background: color-mix(in srgb, var(--background-secondary) 44%, transparent);
+}
+
+.markdown-preview-view.microcomputer-course tbody tr:hover {
+  background: var(--micro-accent-soft);
+}
+
+/* 教材截图在明暗主题下均保持清晰边界，并限制超宽图片。 */
+.markdown-preview-view.microcomputer-course .image-embed img,
+.markdown-preview-view.microcomputer-course img {
+  display: block;
+  box-sizing: border-box;
+  max-width: min(100%, 920px);
+  height: auto;
+  margin: 1.35em auto 0.72em;
+  padding: 0.28rem;
+  border: 1px solid var(--micro-border);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--background-primary) 88%, white 12%);
+  box-shadow: var(--micro-shadow);
+}
+
+/* 当前课程中独占一段的斜体文本用于图题和表题。 */
+.markdown-preview-view.microcomputer-course p:has(> em:first-child:last-child) {
+  margin: 0.1em auto 1.5em;
+  color: var(--text-muted);
+  font-size: 0.92em;
+  text-align: center;
+}
+
+.markdown-preview-view.microcomputer-course pre,
+.markdown-preview-view.microcomputer-course .math-block,
+.markdown-preview-view.microcomputer-course .mermaid {
+  overflow-x: auto;
+  border-radius: 9px;
+}
+
+.markdown-preview-view.microcomputer-course .mermaid {
+  margin: 1.35em 0;
+  padding: 0.7em;
+  border: 1px solid var(--micro-border);
+  background: color-mix(in srgb, var(--background-secondary) 45%, transparent);
+}
+
+.markdown-preview-view.microcomputer-course code:not(pre code) {
+  padding: 0.1em 0.32em;
+  border: 1px solid var(--micro-border);
+  border-radius: 4px;
+}
+
+.markdown-preview-view.microcomputer-course hr {
+  height: 1px;
+  margin: 2.6em auto;
+  border: 0;
+  background: linear-gradient(90deg, transparent, var(--micro-border) 15%, var(--micro-border) 85%, transparent);
+}
+
+@media (max-width: 700px) {
+  .markdown-preview-view.microcomputer-course,
+  .markdown-source-view.microcomputer-course {
+    --file-line-width: 100%;
+  }
+
+  .markdown-preview-view.microcomputer-course h2 {
+    padding-right: 0.35em;
+    font-size: 1.35em;
+  }
+
+  .markdown-preview-view.microcomputer-course th,
+  .markdown-preview-view.microcomputer-course td {
+    min-width: 4.6rem;
+  }
+}
+
+@media print {
+  .markdown-preview-view.microcomputer-course table {
+    display: table;
+    width: 100%;
+    overflow: visible;
+    box-shadow: none;
+  }
+
+  .markdown-preview-view.microcomputer-course .callout,
+  .markdown-preview-view.microcomputer-course img {
+    box-shadow: none;
+  }
+}

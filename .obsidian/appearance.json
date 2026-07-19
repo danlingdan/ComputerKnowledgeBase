@@ -2,7 +2,8 @@
   "enabledCssSnippets": [
     "computer-network-reading",
     "operating-system-reading",
-    "data-structure-notes"
+    "data-structure-notes",
+    "microcomputer-course"
   ],
   "baseFontSizeAction": true,
   "baseFontSize": 15
