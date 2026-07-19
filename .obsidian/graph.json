@@ -34,6 +34,13 @@
         "a": 1,
         "rgb": 5431378
       }
+    },
+    {
+      "query": "tag:#微机原理  ",
+      "color": {
+        "a": 1,
+        "rgb": 5431473
+      }
     }
   ],
   "collapse-display": true,
@@ -46,6 +53,6 @@
   "repelStrength": 16.2110726643599,
   "linkStrength": 1,
   "linkDistance": 234,
-  "scale": 0.18462326225856454,
+  "scale": 0.5087618855792121,
   "close": true
 }
